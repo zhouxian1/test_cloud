@@ -7,7 +7,7 @@ spring:
         git:
           uri: https://gitee.com/jiayuan1234/config-repo
           username: 2352840798@qq.com
-          password: **********
+          password: zx111111
           basedir: D:\MyData\workspace\IDEA\SpringCloud_Sell\config\basedir
 eureka:
   client:
