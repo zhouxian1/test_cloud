@@ -38,4 +38,6 @@ logging:
       zhouxian:
         provider:
           mapper: debug
+test:
+  name: sadsadsad
 
