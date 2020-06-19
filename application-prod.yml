@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: provider-server
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.2.21:3306/spring_cloud?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka #注册到Eureka的地址
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.zhouxian.provider.entity
+
+#showSql
+logging:
+  level:
+    com:
+      zhouxian:
+        provider:
+          mapper: debug
+

@@ -1,0 +1,41 @@
+server:
+  port: ${port:8081}
+
+spring:
+  application:
+    name: provider-server
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.2.21:3306/spring_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka #注册到Eureka的地址
+  instance:
+    #s不使用IP地址
+    prefer-ip-address: false
+    #ip地址
+    ip-address: 127.0.0.1
+    #续约间隔时间
+    lease-renewal-interval-in-seconds: 30
+    #服务时效时间
+    lease-expiration-duration-in-seconds: 90
+
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  mapper-locations: classpath:mappers/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.zhouxian.provider.entity
+
+
+#showSql
+logging:
+  level:
+    com:
+      zhouxian:
+        provider:
+          mapper: debug
+
